@@ -25,4 +25,4 @@ Commit your solution and generate a patch file with
 $ git diff --no-prefix master > solution.patch
 ```
 
-Send the generated patch file to **challenge@funnelthecake.com** with the subject line: **Rails Challenge**. In the body of the email, please explain your thought process and why you chose to solve it the way you did.
+Send the generated patch file to **challenge@funnelthecake.com** with the subject line: **Rails Challenge**. In the body of the email, please explain your thought process and why you chose to solve it the way you did. Please do not submit a pull request!
