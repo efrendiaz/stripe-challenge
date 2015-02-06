@@ -25,4 +25,4 @@ Commit your solution and generate a patch file with
 $ git diff --no-prefix master > solution.patch
 ```
 
-Then submit your response using [this form](https://docs.google.com/forms/d/1WpRc92w5a-w-FilNy-bPJWw6lTS5FHs33OkxEsPtso0/viewform). Thanks!
+Send the generated patch file to **challenge@funnelthecake.com** with the subject line: **Rails Challenge**. In the body of the email, please explain your thought process and why you chose to solve it the way you did.
