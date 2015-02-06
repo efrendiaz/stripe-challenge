@@ -2,6 +2,18 @@
 
 Please complete this challenge in order to be considered for the Ruby on Rails position. This challenge will demonstrate your abilities with the framework, test-driven development, interfacing with APIs, and your knack for solving problems and following directions. This should take no more than 1-2 hours at most to complete.
 
+# Submission
+
+Create a new branch `solution` and commit your code there. When finished, while in the `solution` branch, generate a patch file with
+
+```
+$ git diff --no-prefix master > solution.patch
+```
+
+Send the generated patch file to **challenge@funnelthecake.com** with the subject line: **Rails Challenge**. In the body of the email, please explain your thought process and why you chose to solve it the way you did. 
+
+*Please do not submit a pull request!*
+
 # Description
 
 We will be creating models that interface with [Stripe's API](https://stripe.com/docs/api). A [Stripe account](https://dashboard.stripe.com/register) is required in order to work with their API (it's free). Alright, let's get started!
@@ -16,13 +28,3 @@ We currently have a `Customer` model that needs to have payment support added to
 - Charge a `Customer`'s credit card 
 
 Please have RSpec tests written to support your solution. You are not required to write any views or controllers.
-
-# Submission
-
-Commit your solution and generate a patch file with
-
-```
-$ git diff --no-prefix master > solution.patch
-```
-
-Send the generated patch file to **challenge@funnelthecake.com** with the subject line: **Rails Challenge**. In the body of the email, please explain your thought process and why you chose to solve it the way you did. Please do not submit a pull request!
