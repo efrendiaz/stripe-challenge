@@ -10,9 +10,7 @@ Create a new branch `solution` and commit your code there. When finished, while 
 $ git diff --no-prefix master > solution.patch
 ```
 
-Send the generated patch file to **challenge@funnelthecake.com** with the subject line: **Rails Challenge**. In the body of the email, please explain your thought process and why you chose to solve it the way you did. 
-
-*Please do not submit a pull request!*
+Then use [this form](https://funnelcake.wufoo.com/forms/z18q3clo1f3emhl/) to submit your solution. *Please do not submit a pull request!*
 
 # Description
 
@@ -23,7 +21,7 @@ We will be creating models that interface with [Stripe's API](https://stripe.com
 We currently have a `Customer` model that needs to have payment support added to it using Stripe. There needs to be the ability to 
 
 - Add a credit card to a `Customer`
-- Update the `Customer`'s credit card if it changes
+- Update the `Customer`'s existing credit card (i.e. fix expiration)
 - Remove the `Customer`'s credit card
 - Charge a `Customer`'s credit card 
 
