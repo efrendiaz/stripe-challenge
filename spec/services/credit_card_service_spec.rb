@@ -14,4 +14,12 @@ describe CreditCardService do
     end
   end
 
+  describe "updating cards" do
+    it "should update a card " do
+      card = described_class.create(customer.id, :card => card_token)
+      updated_card = described_class.update(customer.id, card.id, {name: "test name"})
+      expect(updated_card.name).to eq("test name")
+    end
+  end
+
 end
