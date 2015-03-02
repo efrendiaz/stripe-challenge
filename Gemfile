@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
 gem 'therubyracer'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :development do
   gem 'rails_layout'
@@ -20,6 +21,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'stripe-ruby-mock', '~> 2.1.0', :require => 'stripe_mock'
 end
 
 group :development, :test do
