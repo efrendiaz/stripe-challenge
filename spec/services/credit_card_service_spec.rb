@@ -29,4 +29,18 @@ describe CreditCardService do
     end
   end
 
+  describe "charging a card" do
+    it "should charge the card with the specified amount" do
+      card = described_class.create(customer.id, :card => card_token)
+      charge = described_class.charge(customer.id, card.id, 400, "usd")
+      expect(charge.status).to eq("succeeded")
+    end
+
+    it "should send optional params when charging" do
+      card = described_class.create(customer.id, :card => card_token)
+      charge = described_class.charge(customer.id, card.id, 400, "usd", {description: "My first credit card charge"})
+      expect(charge.description).to eq("My first credit card charge")
+    end
+  end
+
 end
