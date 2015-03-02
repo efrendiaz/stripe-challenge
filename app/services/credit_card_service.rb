@@ -25,4 +25,14 @@ class CreditCardService
     end
   end
 
+  def self.delete(customer_id, card_id)
+    begin
+      customer = CustomerService.retrieve(customer_id)
+      customer.sources.retrieve(card_id).delete
+    rescue Stripe::InvalidRequestError, Stripe::AuthenticationError, Stripe::APIConnectionError, Stripe::StripeError, Stripe::CardError => e
+      Rails.logger("Error updating a card: " + e.message)
+      false
+    end
+  end
+
 end

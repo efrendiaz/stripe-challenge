@@ -22,4 +22,11 @@ describe CreditCardService do
     end
   end
 
+  describe "deleting cards" do
+    it "should delete a card " do
+      card = described_class.create(customer.id, :card => card_token)
+      expect(described_class.delete(customer.id, card.id)[:deleted]).to eq(true)
+    end
+  end
+
 end
