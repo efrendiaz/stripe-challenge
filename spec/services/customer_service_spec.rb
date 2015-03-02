@@ -7,15 +7,15 @@ describe CustomerService do
 
   describe "creating Customers" do
     it "should create a customer" do
-      customer = service.create
+      customer = described_class.create(:email => "test@test.com", :name => "MyName")
       expect(customer.email).to eq('test@test.com')
     end
   end
 
   describe "retreiving Customers" do
     it "should get the customer" do
-      customer = service.create
-      retrieved_customer = service.retrieve(customer.id)
+      customer = described_class.create(:email => "test@test.com", :name => "MyName")
+      retrieved_customer = described_class.retrieve(customer.id)
       expect(retrieved_customer.email).to eq('test@test.com')
     end
   end

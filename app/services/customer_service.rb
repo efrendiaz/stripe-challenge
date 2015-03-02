@@ -2,21 +2,17 @@ require 'stripe'
 Stripe.api_key = "sk_test_rHL45YeWpAALUIACwrsfV1ji"
 
 class CustomerService
-  def initialize(params)
-    @email = params[:email]
-    @description = params[:name]
-  end
 
-  def create
+  def self.create(params)
     begin
-      Stripe::Customer.create(:email => email, :description => description)
+      Stripe::Customer.create(:email => params[:email], :description => params[:name])
     rescue Stripe::InvalidRequestError, Stripe::AuthenticationError, Stripe::APIConnectionError, Stripe::StripeError => e
       Rails.logger("Error creating customer: " + e.message)
       false
     end
   end
 
-  def retrieve(customer_id)
+  def self.retrieve(customer_id)
     begin
       Stripe::Customer.retrieve(customer_id)
     rescue Stripe::InvalidRequestError, Stripe::AuthenticationError, Stripe::APIConnectionError, Stripe::StripeError => e
@@ -24,5 +20,5 @@ class CustomerService
       nil
     end
   end
-  attr_reader :email, :description
+
 end

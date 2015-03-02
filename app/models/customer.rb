@@ -7,7 +7,7 @@ class Customer < ActiveRecord::Base
   private
 
   def create_stripe_customer
-    stripe_customer = CustomerService.new(:email => self.email, :name => self.name).create
+    stripe_customer = CustomerService.create(:email => self.email, :name => self.name)
     if stripe_customer
       self.stripe_id = stripe_customer.id
     else
